@@ -5,7 +5,6 @@ Description of Files (the bolded file is the most important one):
 
   Final.ows - Orange file used to create models  
   **Perry_Antonelli_DAT201_Final_Paper.docx - written report about project**  
-  Perry_Antonelli_DAT201_Final_Presentation.pptx - PowerPoint presentation of final project  
-  Twitch_global_data.csv - raw dataset  
+  Perry_Antonelli_DAT201_Final_Presentation.pptx - PowerPoint presentation of final project   
   Twitch_game_data_added_target_features.csv - dataset with target features added  
   
