@@ -3,8 +3,8 @@ It involves looking at a dataset about the top streamed categories on twitch and
 
 Description of Files (the bolded file is the most important one):
 
+  **DAT201_Final.pdf - written report about project**  
   Final.ows - Orange file used to create models  
-  **Perry_Antonelli_DAT201_Final_Paper.docx - written report about project**  
   Perry_Antonelli_DAT201_Final_Presentation.pptx - PowerPoint presentation of final project   
   Twitch_game_data_added_target_features.csv - dataset with target features added  
   
