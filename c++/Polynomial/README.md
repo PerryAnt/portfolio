@@ -1,5 +1,3 @@
-This folder contains a class for polynomials that I have written. 
+This folder contains a class for polynomials that I have written.  
 
-Description of Files:
-
-main.cpp - main function, shows how basic operations work on polynomial objects  
+Unit tests are included in PolynomialTest.cpp but require UnitTest++ to run.  
