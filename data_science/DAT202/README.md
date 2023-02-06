@@ -1,8 +1,7 @@
 This folder contains my final project for my DAT202 class. 
 It involves looking at datasets about heart disease and stroke.
 
-
-Description of Files (the bolded file is the most important one):
+File Descriptions: (bold is the most important):
 
 **DAT202_Final.pdf - Written report for this project**  
 Final.ipynb - Jupyter Notebook with most of the code for this project  
