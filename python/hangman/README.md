@@ -1,6 +1,6 @@
 This folder contains my final project for my CIS189 class. For this project I created a small hangman game in python.
 
-Description of Files (the bolded file is the most important one)::
+File Descriptions: (bold is the most important):
 
 **CIS189_Final_Presentation.mp4 - Video presentation of my project. I show both the code and the running program while explaining how it works.**  
 button.py - Python file for button class.  
