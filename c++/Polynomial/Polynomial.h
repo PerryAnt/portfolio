@@ -18,7 +18,7 @@ class Polynomial
 
         void print();
 
-        bool is_zero();
+        bool is_zero() const;
 
         double operator()(double x);
 

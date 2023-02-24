@@ -36,7 +36,7 @@ int Polynomial::get_leading_coefficient() const
     return coefficients.back();
 }
 
-bool Polynomial::is_zero()
+bool Polynomial::is_zero() const
 {
     return degree == 0 && coefficients[0] == 0;
 }
@@ -100,6 +100,14 @@ Polynomial& Polynomial::operator-= (Polynomial const &rhs) {
 }
 
 Polynomial& Polynomial::operator*= (Polynomial const &rhs) {
+    if(this->is_zero() || rhs.is_zero())
+    {
+        this->degree = 0;
+        this->coefficients.clear();
+        this->coefficients.push_back(0);
+        return *this;
+    }
+
     //keep track of degree of lhs
     int old_degree = this->degree;
 

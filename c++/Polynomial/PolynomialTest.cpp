@@ -262,6 +262,11 @@ namespace
         poly4 *= poly1;
 
         CHECK(poly5 == poly4);
+
+        Polynomial poly6 = Polynomial();
+        Polynomial poly7 = poly5 * poly6;
+        CHECK(poly7.is_zero());
+
     }
 
     TEST(DivisionWithoutRemainder)
