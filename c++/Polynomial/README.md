@@ -52,7 +52,7 @@ The degree and leading coefficient of a polynomial can be obtained by using the 
 ```cpp
 Polynomial p = Polynomial();
 
-int d = p.get_degree;
+int d = p.get_degree();
 int c = p.get_leading_coefficient() ;
 ```
 
