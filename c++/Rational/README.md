@@ -20,17 +20,50 @@ int b = 2;
 Rational r = Rational(a, b);
 ```
 
-### Simplification, Negatives, and Zero
+### Simplification
 
-Polynomials are considered reduced if the numerator and denominator do not have any common factors.
+Rational numbers are considered reduced if the numerator and denominator do not have any common factors.
 
 For example, 1/2 and 2/4 represent the same number but 1/2 is reduced and 2/4 is not.
 
 Non-private functions will only return reduced fractions.
 
-Negative fractions are represented by having a negative numerator and denominators will always be positive.
+
+### Negation
+
+The unary - operator can be used to obtain the negative of a rational number.
+
+-x = (-a)/b
+
+```cpp
+Rational r1 = Rational();
+Rational r2 = Rational();
+
+r2 = -r1
+```
+
+Non-private functions will only return fractions with a positive denominator.
+
+Negative fractions are represented by having a negative numerator.
+
+### Getting Numerator and Denominator
+
+The numerator and denominator can be obtained by using the get_numerator() and get_denominator() functions, respectively.
+
+```cpp
+Rational r1 = Rational();
+
+int a = r1.get_numerator();
+int b = r1.get_denominator();
+```
+
+### Zero and Infinity
 
 Zero is represented by a numerator of 0 and a denominator of 1.
+
+Positive infinity is representing by a numerator of 1 and a denominator of 0.
+
+Negative infinity is representing by a numerator of -1 and a denominator of 0.
 
 
 ### Addition, Substraction, Multiplication, an Division
@@ -81,19 +114,6 @@ r1 *= r2;
 r1 /= r2;
 ```
 
-### Negation
-
-The unary - operator can be used to obtain the negative of a rational number.
-
--x = (-a)/b
-
-```cpp
-Rational r1 = Rational();
-Rational r2 = Rational();
-
-r2 = -r1
-```
-
 ### Comparisons
 
 The is_zero() function returns true if the fraction is the zero and false otherwise
@@ -128,7 +148,7 @@ The other comparisons (>=, <, and <=) follow from the definitions of = and >.
 
 ### Reciprocal
 
-The reciprocal() function returns the reciprocal of a number which is obtained by swapping the numerator and denominator.
+The reciprocal() function returns the reciprocal of a number which is obtained by swapping the numerator and denominator and swapping their signs if necessary.
 
 1/x = b/a
 
