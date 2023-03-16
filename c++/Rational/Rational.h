@@ -43,20 +43,9 @@ class Rational
             return lhs.numerator * rhs.denominator - lhs.denominator * rhs.numerator > 0;
         }
 
-        friend bool operator<(const Rational& lhs, const Rational& rhs) {
-
-            return rhs > lhs;
-        }
-
-        friend bool operator>=(const Rational& lhs, const Rational& rhs) {
-
-            return !(lhs < rhs);
-        }
-
-        friend bool operator<=(const Rational& lhs, const Rational& rhs) {
-
-            return !(lhs > rhs);
-        }
+        friend bool operator<(const Rational& lhs, const Rational& rhs) {return rhs > lhs;}
+        friend bool operator>=(const Rational& lhs, const Rational& rhs) {return !(lhs < rhs);}
+        friend bool operator<=(const Rational& lhs, const Rational& rhs) {return !(lhs > rhs);}
 
         Rational operator-();
         Rational reciprocal();
