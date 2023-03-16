@@ -4,8 +4,7 @@
 namespace
 {
 
-    TEST(IsZero)
-    {
+    TEST(IsZero) {
         Rational rat1 = Rational();
         Rational rat2 = Rational(1, 2);
 
@@ -13,8 +12,7 @@ namespace
         CHECK(!rat2.is_zero());
     }
 
-    TEST(Equals)
-    {
+    TEST(Equals) {
         Rational rat1 = Rational(1, 2);
         Rational rat2 = Rational(1, 2);
         Rational rat3 = Rational(rat1);
@@ -34,8 +32,7 @@ namespace
     }
 
 
-    TEST(NotEqual)
-    {
+    TEST(NotEqual) {
         Rational rat1 = Rational(1, 3);
         Rational rat2 = Rational(2, 3);
         Rational rat3 = Rational(1, 4);
@@ -44,8 +41,20 @@ namespace
         CHECK(rat1 != rat3);
     }
 
-    TEST(Negation)
-    {
+    TEST(Comparisons) {
+        Rational rat1 = Rational(1, 3);
+        Rational rat2 = Rational(2, 3);
+        Rational rat3 = Rational(1, 4);
+
+        CHECK(rat1 < rat2);
+        CHECK(rat2 > rat1);
+        CHECK(rat1 >= rat3);
+        CHECK(rat3 <= rat2);
+
+        CHECK(rat1 >= rat1);
+    }
+
+    TEST(Negation) {
         Rational rat1 = Rational( 1, 2);
         Rational rat2 = Rational(-1, 2);
 
@@ -57,8 +66,7 @@ namespace
         CHECK(rat1 == -rat3);
     }
 
-    TEST(Reciprocal)
-    {
+    TEST(Reciprocal) {
         Rational rat1 = Rational(1, 2);
         Rational rat2 = Rational(2, 1);
 
@@ -69,8 +77,7 @@ namespace
         CHECK(rat1 == rat3.reciprocal());
     }
 
-    TEST(AdditionWithoutSimplify)
-    {
+    TEST(AdditionWithoutSimplify) {
         Rational rat1 = Rational(1, 5);
         Rational rat2 = Rational(2, 5);
         Rational rat3 = Rational(3, 5);
@@ -91,8 +98,7 @@ namespace
         CHECK(rat5 == rat4);
     }
 
-    TEST(AdditionWithSimplify)
-    {
+    TEST(AdditionWithSimplify) {
         Rational rat1 = Rational(3, 12);
         Rational rat2 = Rational(5, 12);
         Rational rat3 = Rational(2, 3);
@@ -109,8 +115,7 @@ namespace
     }
 
 
-    TEST(SubtractionWithoutSimplify)
-    {
+    TEST(SubtractionWithoutSimplify) {
         Rational rat1 = Rational(1, 3);
         Rational rat2 = Rational(2, 3);
         Rational rat3 = Rational(1, 3);
@@ -128,8 +133,7 @@ namespace
         CHECK(rat5 == rat4);
     }
 
-    TEST(SubtractionWithSimplify)
-    {
+    TEST(SubtractionWithSimplify) {
 
         Rational rat1 = Rational(3, 12);
         Rational rat2 = Rational(5, 12);
@@ -147,8 +151,7 @@ namespace
         CHECK(rat3.is_zero());
     }
 
-    TEST(MultiplicationWithoutSimplify)
-    {
+    TEST(MultiplicationWithoutSimplify) {
         Rational rat1 = Rational(2, 3);
         Rational rat2 = Rational(5, 7);
         Rational rat3 = Rational(10, 21);
@@ -158,8 +161,7 @@ namespace
         CHECK(rat3 == rat2);
     }
 
-    TEST(MultiplicationWithSimplify)
-    {
+    TEST(MultiplicationWithSimplify) {
         Rational rat1 = Rational(2, 3);
         Rational rat2 = Rational(5, 2);
         Rational rat3 = Rational(5, 3);
@@ -180,8 +182,7 @@ namespace
         CHECK(rat7.is_zero());
     }
 
-    TEST(DivisionWithoutSimplify)
-    {
+    TEST(DivisionWithoutSimplify) {
         Rational rat1 = Rational(1, 2);
         Rational rat2 = Rational(3, 5);
         Rational rat3 = Rational(6, 5);
@@ -192,8 +193,7 @@ namespace
         CHECK(rat3 == rat2);
     }
 
-    TEST(DivisionWithSimplify)
-    {
+    TEST(DivisionWithSimplify) {
         Rational rat1 = Rational(2, 1);
         Rational rat2 = Rational(4, 3);
         Rational rat3 = Rational(2, 3);
@@ -204,8 +204,7 @@ namespace
         CHECK(rat3 == rat2);
     }
 
-    TEST(SimplifyInConstructor)
-    {
+    TEST(SimplifyInConstructor) {
         Rational rat1 = Rational(50, 100);
         Rational rat2 = Rational(1, 2);
         CHECK(rat1 == rat2);

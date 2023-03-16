@@ -1,48 +1,40 @@
 #include "Rational.h"
 
-void Rational::print()
-{
+void Rational::print() {
     std::cout << numerator << "/" << denominator << std::endl;
 }
 
 //Default to zero
-Rational::Rational()
-{
+Rational::Rational() {
     numerator = 0;
     denominator = 1;
 }
 
 
-Rational::Rational(int num, int denom)
-{
+Rational::Rational(int num, int denom) {
     numerator = num;
     denominator = denom;
 
     simplify();
 }
 
-int Rational::get_numerator() const
-{
+int Rational::get_numerator() const {
     return numerator;
 }
 
-int Rational::get_denominator() const
-{
+int Rational::get_denominator() const {
     return denominator;
 }
 
-bool Rational::is_zero()
-{
+bool Rational::is_zero() {
     return numerator == 0;
 }
 
-Rational Rational::operator- ()
-{
+Rational Rational::operator- () {
     return Rational(-numerator, denominator);
 }
 
-Rational Rational::reciprocal()
-{
+Rational Rational::reciprocal() {
     return Rational(denominator, numerator);
 }
 
@@ -82,25 +74,22 @@ Rational& Rational::operator/= (Rational const &rhs) {
 }
 
 
-void Rational::simplify(){
+void Rational::simplify() {
 
     //all numbers should have a positive denominator
-    if(denominator < 0)
-    {
+    if(denominator < 0) {
         numerator *= -1;
         denominator *= -1;
     }
 
     //zero = 0/1
-    if(numerator == 0)
-    {
+    if(numerator == 0) {
         denominator = 1;
         return;
     }
 
     //infinity = 1/0
-    if(denominator == 0)
-    {
+    if(denominator == 0) {
         if(numerator == 0)
             numerator = 1;
 

@@ -20,15 +20,13 @@ class Rational
 
         int get_denominator() const;
 
-        friend std::ostream& operator<<(std::ostream& out, Rational const& r)
-        {
+        friend std::ostream& operator<<(std::ostream& out, Rational const& r) {
             out << r.numerator << "/" << r.denominator;
             out << std::endl;
             return out;
         }
 
-        friend bool operator==(const Rational& lhs, const Rational& rhs)
-        {
+        friend bool operator==(const Rational& lhs, const Rational& rhs) {
             if(lhs.numerator != rhs.numerator)
                 return false;
 
@@ -38,35 +36,51 @@ class Rational
             return true;
         }
 
-        friend bool operator!=(const Rational& lhs, const Rational& rhs) { return !(lhs == rhs); }
+        friend bool operator!=(const Rational& lhs, const Rational& rhs) {return !(lhs == rhs);}
+
+        friend bool operator>(const Rational& lhs, const Rational& rhs) {
+
+            return lhs.numerator * rhs.denominator - lhs.denominator * rhs.numerator > 0;
+        }
+
+        friend bool operator<(const Rational& lhs, const Rational& rhs) {
+
+            return rhs > lhs;
+        }
+
+        friend bool operator>=(const Rational& lhs, const Rational& rhs) {
+
+            return !(lhs < rhs);
+        }
+
+        friend bool operator<=(const Rational& lhs, const Rational& rhs) {
+
+            return !(lhs > rhs);
+        }
 
         Rational operator-();
         Rational reciprocal();
 
         Rational& operator+=(const Rational&);
-        friend Rational operator+(Rational lhs, const Rational& rhs)
-        {
+        friend Rational operator+(Rational lhs, const Rational& rhs) {
             lhs += rhs;
             return lhs;
         }
 
         Rational& operator-=(const Rational&);
-        friend Rational operator-(Rational lhs, const Rational& rhs)
-        {
+        friend Rational operator-(Rational lhs, const Rational& rhs) {
             lhs -= rhs;
             return lhs;
         }
 
         Rational& operator*=(const Rational&);
-        friend Rational operator*(Rational lhs, const Rational& rhs)
-        {
+        friend Rational operator*(Rational lhs, const Rational& rhs) {
             lhs *= rhs;
             return lhs;
         }
 
         Rational& operator/=(const Rational&);
-        friend Rational operator/(Rational lhs, const Rational& rhs)
-        {
+        friend Rational operator/(Rational lhs, const Rational& rhs) {
             lhs /= rhs;
             return lhs;
         }
